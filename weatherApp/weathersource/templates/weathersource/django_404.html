@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WeatherMine</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/django_404_style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/django_media_queries.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+
+<header style="color:white;">WEATHERSOURCE</header>
+
+<body>
+	<div class="error"><p class="errormsg" style="color:white;">OOPS. YOUR SEARCH RETURNED NO RESULTS.<br><a class="goback" href="{% url 'home' %}">GO BACK.</a></p></div>
+</body>
+
+<footer style="color:white;">Powered by Django</footer>
+</html>

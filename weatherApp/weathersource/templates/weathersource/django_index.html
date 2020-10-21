@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WeatherSource</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/django_style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/django_media_queries.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+
+<header style="color:white;">WEATHERSOURCE</header>
+
+<body>
+	<div class="prime">
+		<form method="POST" class ="wrapper">
+			{% csrf_token %}
+			<input class="form-control" name="city" id="text1" type="text" placeholder="search city" aria-label="Search">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+		<div class="container">
+			<div class="box1">
+				<div class="txt city">{{ city_weather.city }}</div>
+				<div class="txt status">{{ city_weather.status }}</div>
+				<div class="txt humidity">HUMIDITY: {{ city_weather.humidity }}%</div>
+				<div class="txt wind">{{ city_weather.wind }}</div>
+			</div>
+			<div class="box2">
+				<div class="img"><img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="weather"></div>
+				<div class="txt box temp">{{ city_weather.temp }}&#176;C</div>
+				<div class="txt box highlow">HIGH: {{ city_weather.high }}&#176; LOW: {{ city_weather.low}}&#176;</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<footer style="color:white;">Powered by Django</footer>
+</html>
