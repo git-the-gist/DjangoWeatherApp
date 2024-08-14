@@ -4,7 +4,7 @@ from ipstack import GeoLookup  # using ipstack to find the user's exact ip addre
 import ipinfo  # using ipinfo to retrieve information on the ip's owner
 import pyowm  # importing pyowm to receive weather data
 
-owm = pyowm.OWM('0d92fe6673852fd95c9d1ff3a259685a')  # defining pyowm API key
+owm = pyowm.OWM("it's a secret")  # defining pyowm API key
 
 mgr = owm.weather_manager()  # calling PyOWM weather manager
 
