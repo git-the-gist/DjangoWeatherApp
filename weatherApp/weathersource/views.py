@@ -4,11 +4,11 @@ from ipstack import GeoLookup  # using ipstack to find the user's exact ip addre
 import ipinfo  # using ipinfo to retrieve information on the ip's owner
 import pyowm  # importing pyowm to receive weather data
 
-owm = pyowm.OWM("it's a secret")  # defining pyowm API key
+owm = pyowm.OWM("key")  # defining pyowm API key
 
 mgr = owm.weather_manager()  # calling PyOWM weather manager
 
-geo_lookup = GeoLookup("1379a525f4c6d711990c5bb322c9f4ea")  # defining our API key for ipstack
+geo_lookup = GeoLookup("key")  # defining our API key for ipstack
 
 location = geo_lookup.get_own_location()  # using the "get_own_location()" method to get the user's location
 
@@ -64,7 +64,7 @@ def index(request):
 
     else:
         try:
-            access_token = 'd6a18753dde2ed'  # defining our access_token for ipinfo
+            access_token = 'key'  # defining our access_token for ipinfo
             handler = ipinfo.getHandler(access_token)  # defining a handler for our API operations
             details = handler.getDetails()  # using the "getDetails()" method on "ip_address" to get
             # the user's info based on their ip address
